@@ -1,0 +1,24 @@
+Starting asyncFunction for client 1
+Sensor data written to file: { temperature: 58, pressure: 1727 }
+Threshold exceeded for client 1
+Starting syncFunction3 for client 1
+Data written to storage for client 1
+Starting syncFunction4 for client 1
+SMS sent to client 1
+Async function completed for client 1
+Starting asyncFunction for client 2
+Sensor data written to file: { temperature: 33, pressure: 1152 }
+Threshold exceeded for client 2
+Starting syncFunction3 for client 2
+Data written to storage for client 2
+Starting syncFunction4 for client 2
+SMS sent to client 2
+Async function completed for client 2
+Starting asyncFunction for client 3
+Sensor data written to file: { temperature: 20, pressure: 1138 }
+Threshold exceeded for client 3
+Starting syncFunction3 for client 3
+Data written to storage for client 3
+Starting syncFunction4 for client 3
+SMS sent to client 3
+Async function completed for client 3

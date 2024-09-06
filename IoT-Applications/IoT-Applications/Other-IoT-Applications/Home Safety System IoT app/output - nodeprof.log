@@ -1,0 +1,355 @@
+
+> analysis_code@1.0.0 jalangi
+> mx jalangi --analysis ../src/ch.usi.inf.nodeprof/js/analysis/asyncawait/analysis.js "./test.js"
+
+functionEnter@ (test.js:1:1:51:2)
+functionExit@ (test.js:1:1:51:2) [Function (anonymous)] {}
+functionEnter@ (test.js:1:1:51:2)
+functionEnter@ (homeSafetySystemHandler.js:1:1:75:46)
+functionExit@ (homeSafetySystemHandler.js:1:1:75:46) [Function (anonymous)] {}
+functionEnter@ (homeSafetySystemHandler.js:1:1:75:46)
+write (homeSafetySystemHandler.js:24:1:27:2) normalizeTemperature [Function: normalizeTemperature]
+write (homeSafetySystemHandler.js:30:1:33:2) scaleHumidity [Function: scaleHumidity]
+write (homeSafetySystemHandler.js:36:1:39:2) convertGasLeakageToString [Function: convertGasLeakageToString]
+write (homeSafetySystemHandler.js:42:1:53:2) preprocessData [AsyncFunction: preprocessData]
+write (homeSafetySystemHandler.js:56:1:73:2) handleHomeSafetySystemData [AsyncFunction: handleHomeSafetySystemData]
+functionEnter@ (node_modules/mongoose/index.js:1:1:63:53)
+functionExit@ (node_modules/mongoose/index.js:1:1:63:53) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/index.js:1:1:63:53)
+functionEnter@ (node_modules/mongoose/lib/index.js:1:1:13:28)
+functionExit@ (node_modules/mongoose/lib/index.js:1:1:13:28) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/index.js:1:1:13:28)
+functionEnter@ (node_modules/mongoose/lib/driver.js:1:1:15:4)
+functionExit@ (node_modules/mongoose/lib/driver.js:1:1:15:4) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/driver.js:1:1:15:4)
+write (node_modules/mongoose/lib/driver.js:7:1:7:18) driver null
+functionExit@ (node_modules/mongoose/lib/driver.js:1:1:15:4) undefined {}
+functionEnter@ (node_modules/mongoose/lib/drivers/node-mongodb-native/index.js:1:1:8:47)
+functionExit@ (node_modules/mongoose/lib/drivers/node-mongodb-native/index.js:1:1:8:47) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/drivers/node-mongodb-native/index.js:1:1:8:47)
+functionEnter@ (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1:461:36)
+functionExit@ (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1:461:36) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1:461:36)
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:25:1:32:2) NativeCollection [Function: NativeCollection]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:93:1:272:2) iter [Function: iter]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:349:1:357:2) inspectable [Function: inspectable]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:358:1:360:2) map [Function: map]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:361:1:363:2) formatObjectId [Function: formatObjectId]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:364:1:370:2) formatDate [Function: formatDate]
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:371:1:445:2) format [Function: format]
+functionEnter@ (node_modules/mongoose/lib/collection.js:1:1:327:30)
+functionExit@ (node_modules/mongoose/lib/collection.js:1:1:327:30) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/collection.js:1:1:327:30)
+write (node_modules/mongoose/lib/collection.js:22:1:38:2) Collection [Function: Collection]
+write (node_modules/mongoose/lib/collection.js:7:1:7:52) EventEmitter <ref *1> [Function: EventEmitter] {
+  once: [AsyncFunction: once],
+  on: [Function: on],
+  getEventListeners: [Function: getEventListeners],
+  EventEmitter: [Circular *1],
+  usingDomains: false,
+  captureRejectionSymbol: Symbol(nodejs.rejection),
+  captureRejections: [Getter/Setter],
+  EventEmitterAsyncResource: [Getter],
+  errorMonitor: Symbol(events.errorMonitor),
+  defaultMaxListeners: [Getter/Setter],
+  setMaxListeners: [Function (anonymous)],
+  init: [Function (anonymous)],
+  listenerCount: [Function (anonymous)]
+}
+functionEnter@ (node_modules/mongoose/lib/connectionState.js:1:1:26:29)
+functionExit@ (node_modules/mongoose/lib/connectionState.js:1:1:26:29) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/connectionState.js:1:1:26:29)
+write (node_modules/mongoose/lib/connectionState.js:8:33:8:62) exports [Object: null prototype] {}
+write (node_modules/mongoose/lib/connectionState.js:8:1:8:62) STATES [Object: null prototype] {}
+write (node_modules/mongoose/lib/connectionState.js:10:1:10:35) disconnected disconnected
+write (node_modules/mongoose/lib/connectionState.js:11:1:11:29) connected connected
+write (node_modules/mongoose/lib/connectionState.js:12:1:12:31) connecting connecting
+write (node_modules/mongoose/lib/connectionState.js:13:1:13:37) disconnecting disconnecting
+write (node_modules/mongoose/lib/connectionState.js:14:1:14:37) uninitialized uninitialized
+functionExit@ (node_modules/mongoose/lib/connectionState.js:1:1:26:29) undefined {}
+write (node_modules/mongoose/lib/collection.js:8:1:8:44) STATES [Object: null prototype] {
+  '0': 'disconnected',
+  '1': 'connected',
+  '2': 'connecting',
+  '3': 'disconnecting',
+  '99': 'uninitialized',
+  disconnected: 0,
+  connected: 1,
+  connecting: 2,
+  disconnecting: 3,
+  uninitialized: 99
+}
+functionEnter@ (node_modules/mongoose/lib/helpers/immediate.js:1:1:16:4)
+functionExit@ (node_modules/mongoose/lib/helpers/immediate.js:1:1:16:4) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/helpers/immediate.js:1:1:16:4)
+binary object === undefined = false
+binary function === function = true
+conditional (node_modules/mongoose/lib/helpers/immediate.js:10:18:10:90) true
+conditional (node_modules/mongoose/lib/helpers/immediate.js:10:18:10:90) true
+write (node_modules/mongoose/lib/helpers/immediate.js:10:1:12:26) nextTick [Function: bound nextTick]
+functionExit@ (node_modules/mongoose/lib/helpers/immediate.js:1:1:16:4) undefined {}
+write (node_modules/mongoose/lib/collection.js:9:1:9:49) immediate [Function: immediate]
+functionExit@ (node_modules/mongoose/lib/collection.js:1:1:327:30) undefined {}
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:7:1:7:55) MongooseCollection [Function: Collection]
+functionEnter@ (node_modules/mongoose/lib/error/mongooseError.js:1:1:13:33)
+functionExit@ (node_modules/mongoose/lib/error/mongooseError.js:1:1:13:33) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/lib/error/mongooseError.js:1:1:13:33)
+functionExit@ (node_modules/mongoose/lib/error/mongooseError.js:1:1:13:33) undefined {}
+write (node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:8:1:8:59) MongooseError [class MongooseError extends Error]
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/index.js:1:1:172:34)
+functionExit@ (node_modules/mongoose/node_modules/mongodb/lib/index.js:1:1:172:34) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/index.js:1:1:172:34)
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/admin.js:1:1:134:34)
+functionExit@ (node_modules/mongoose/node_modules/mongodb/lib/admin.js:1:1:134:34) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/admin.js:1:1:134:34)
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/bson.js:1:1:62:33)
+functionExit@ (node_modules/mongoose/node_modules/mongodb/lib/bson.js:1:1:62:33) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/node_modules/mongodb/lib/bson.js:1:1:62:33)
+write (node_modules/mongoose/node_modules/mongodb/lib/bson.js:24:1:38:2) pluckBSONSerializeOptions [Function: pluckBSONSerializeOptions]
+write (node_modules/mongoose/node_modules/mongodb/lib/bson.js:46:1:60:2) resolveBSONOptions [Function: resolveBSONOptions]
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1:1:4337:35)
+functionExit@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1:1:4337:35) [Function (anonymous)] {}
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1:1:4337:35)
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3:1:5:2) isAnyArrayBuffer [Function: isAnyArrayBuffer]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:6:1:8:2) isUint8Array [Function: isUint8Array]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:9:1:11:2) isRegExp [Function: isRegExp]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:12:1:14:2) isMap [Function: isMap]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:15:1:17:2) isDate [Function: isDate]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:18:1:28:2) defaultInspect [Function: defaultInspect]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:29:1:37:2) getStylizeFunction [Function: getStylizeFunction]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:148:1:174:2) validateUtf8 [Function: validateUtf8]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:176:1:210:2) tryReadBasicLatin [Function: tryReadBasicLatin]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:211:1:225:2) tryWriteBasicLatin [Function: tryWriteBasicLatin]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:227:1:229:2) nodejsMathRandomBytes [Function: nodejsMathRandomBytes]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:316:1:319:2) isReactNative [Function: isReactNative]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:320:1:325:2) webMathRandomBytes [Function: webMathRandomBytes]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:767:1:775:2) isDBRefLike [Function: isDBRefLike]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1502:1:1504:2) isDigit [Function: isDigit]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1505:1:1518:2) divideu128 [Function: divideu128]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1519:1:1538:2) multiply64x2 [Function: multiply64x2]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1539:1:1552:2) lessThan [Function: lessThan]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:1553:1:1555:2) invalidErr [Function: invalidErr]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:2442:1:2458:2) internalCalculateObjectSize [Function: internalCalculateObjectSize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:2459:1:2594:2) calculateElement [Function: calculateElement]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:2596:1:2598:2) alphabetize [Function: alphabetize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:2770:1:2790:2) internalDeserialize [Function: internalDeserialize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:2792:1:3205:2) deserializeObject [Function: deserializeObject]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3209:1:3219:2) serializeString [Function: serializeString]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3220:1:3239:2) serializeNumber [Function: serializeNumber]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3240:1:3247:2) serializeBigInt [Function: serializeBigInt]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3248:1:3254:2) serializeNull [Function: serializeNull]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3255:1:3262:2) serializeBoolean [Function: serializeBoolean]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3263:1:3274:2) serializeDate [Function: serializeDate]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3275:1:3293:2) serializeRegExp [Function: serializeRegExp]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3294:1:3308:2) serializeBSONRegExp [Function: serializeBSONRegExp]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3309:1:3323:2) serializeMinMax [Function: serializeMinMax]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3324:1:3331:2) serializeObjectId [Function: serializeObjectId]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3332:1:3349:2) serializeBuffer [Function: serializeBuffer]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3350:1:3362:2) serializeObject [Function: serializeObject]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3363:1:3371:2) serializeDecimal128 [Function: serializeDecimal128]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3372:1:3383:2) serializeLong [Function: serializeLong]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3384:1:3392:2) serializeInt32 [Function: serializeInt32]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3393:1:3400:2) serializeDouble [Function: serializeDouble]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3401:1:3412:2) serializeFunction [Function: serializeFunction]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3413:1:3444:2) serializeCode [Function: serializeCode]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3445:1:3469:2) serializeBinary [Function: serializeBinary]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3470:1:3480:2) serializeSymbol [Function: serializeSymbol]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3481:1:3499:2) serializeDBRef [Function: serializeDBRef]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3500:1:3817:2) serializeInto [Function: serializeInto]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3819:1:3824:2) isBSONType [Function: isBSONType]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3840:1:3918:2) deserializeValue [Function: deserializeValue]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3919:1:3929:2) serializeArray [Function: serializeArray]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3930:1:3933:2) getISOString [Function: getISOString]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:3934:1:4014:2) serializeValue [Function: serializeValue]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4030:1:4084:2) serializeDocument [Function: serializeDocument]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4085:1:4097:2) parse [Function: parse]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4098:1:4113:2) stringify [Function: stringify]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4114:1:4117:2) EJSONserialize [Function: EJSONserialize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4118:1:4121:2) EJSONdeserialize [Function: EJSONdeserialize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4129:1:4137:2) getSize [Function: getSize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4138:1:4146:2) findNull [Function: findNull]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4147:1:4220:2) parseToElements [Function: parseToElements]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4229:1:4233:2) setInternalBufferSize [Function: setInternalBufferSize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4234:1:4246:2) serialize [Function: serialize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4247:1:4255:2) serializeWithBufferAndIndex [Function: serializeWithBufferAndIndex]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4256:1:4258:2) deserialize [Function: deserialize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4259:1:4264:2) calculateObjectSize [Function: calculateObjectSize]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:4265:1:4276:2) deserializeStream [Function: deserializeStream]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:39:1:39:29) BSON_MAJOR_VERSION 6
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:40:1:40:34) BSON_INT32_MAX 2147483647
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:41:1:41:35) BSON_INT32_MIN -2147483648
+binary 9223372036854776000 - 1 = 9223372036854776000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:42:1:42:43) BSON_INT64_MAX 9223372036854776000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:43:1:43:40) BSON_INT64_MIN -9223372036854776000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:44:1:44:35) JS_INT_MAX 9007199254740992
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:45:1:45:36) JS_INT_MIN -9007199254740992
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:46:1:46:27) BSON_DATA_NUMBER 1
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:47:1:47:27) BSON_DATA_STRING 2
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:48:1:48:27) BSON_DATA_OBJECT 3
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:49:1:49:26) BSON_DATA_ARRAY 4
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:50:1:50:27) BSON_DATA_BINARY 5
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:51:1:51:30) BSON_DATA_UNDEFINED 6
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:52:1:52:24) BSON_DATA_OID 7
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:53:1:53:28) BSON_DATA_BOOLEAN 8
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:54:1:54:25) BSON_DATA_DATE 9
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:55:1:55:26) BSON_DATA_NULL 10
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:56:1:56:28) BSON_DATA_REGEXP 11
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:57:1:57:31) BSON_DATA_DBPOINTER 12
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:58:1:58:26) BSON_DATA_CODE 13
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:59:1:59:28) BSON_DATA_SYMBOL 14
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:60:1:60:34) BSON_DATA_CODE_W_SCOPE 15
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:61:1:61:25) BSON_DATA_INT 16
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:62:1:62:31) BSON_DATA_TIMESTAMP 17
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:63:1:63:26) BSON_DATA_LONG 18
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:64:1:64:32) BSON_DATA_DECIMAL128 19
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:65:1:65:31) BSON_DATA_MIN_KEY 255
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:66:1:66:31) BSON_DATA_MAX_KEY 127
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:67:1:67:38) BSON_BINARY_SUBTYPE_DEFAULT 0
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:68:1:68:39) BSON_BINARY_SUBTYPE_UUID_NEW 4
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:69:1:91:3) BSONType {
+  double: 1,
+  string: 2,
+  object: 3,
+  array: 4,
+  binData: 5,
+  undefined: 6,
+  objectId: 7,
+  bool: 8,
+  date: 9,
+  null: 10,
+  regex: 11,
+  dbPointer: 12,
+  javascript: 13,
+  symbol: 14,
+  javascriptWithScope: 15,
+  int: 16,
+  timestamp: 17,
+  long: 18,
+  decimal: 19,
+  minKey: -1,
+  maxKey: 127
+}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:139:1:139:23) FIRST_BIT 128
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:140:1:140:28) FIRST_TWO_BITS 192
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:141:1:141:30) FIRST_THREE_BITS 224
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:142:1:142:29) FIRST_FOUR_BITS 240
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:143:1:143:29) FIRST_FIVE_BITS 248
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:144:1:144:26) TWO_BIT_CHAR 192
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:145:1:145:28) THREE_BIT_CHAR 224
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:146:1:146:27) FOUR_BIT_CHAR 240
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:147:1:147:29) CONTINUING_CHAR 128
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:230:28:237:2)
+return (node_modules/mongoose/node_modules/bson/lib/bson.cjs:232:9:232:46) [Function: randomBytes]
+functionExit@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:230:28:237:2) [Function: randomBytes] {}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:230:1:237:5) nodejsRandomBytes [Function: randomBytes]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:238:1:314:2) nodeJsByteUtils {
+  toLocalBufferType: [Function: toLocalBufferType],
+  allocate: [Function: allocate],
+  allocateUnsafe: [Function: allocateUnsafe],
+  equals: [Function: equals],
+  fromNumberArray: [Function: fromNumberArray],
+  fromBase64: [Function: fromBase64],
+  toBase64: [Function: toBase64],
+  fromISO88591: [Function: fromISO88591],
+  toISO88591: [Function: toISO88591],
+  fromHex: [Function: fromHex],
+  toHex: [Function: toHex],
+  toUTF8: [Function: toUTF8],
+  utf8ByteLength: [Function: utf8ByteLength],
+  encodeUTF8Into: [Function: encodeUTF8Into],
+  randomBytes: [Function: randomBytes]
+}
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:326:25:340:2)
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:327:13:327:19) crypto undefined
+binary undefined == null = true
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:328:9:328:71) false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:328:9:328:71) false
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:316:1:319:2)
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:317:13:317:22) navigator undefined
+binary undefined === object = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:318:12:318:80) false
+return (node_modules/mongoose/node_modules/bson/lib/bson.cjs:318:5:318:81) false
+functionExit@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:316:1:319:2) false {}
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:334:13:334:28) false
+return (node_modules/mongoose/node_modules/bson/lib/bson.cjs:338:9:338:35) [Function: webMathRandomBytes]
+functionExit@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:326:25:340:2) [Function: webMathRandomBytes] {}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:326:1:340:5) webRandomBytes [Function: webMathRandomBytes]
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:341:1:341:32) HEX_DIGIT /(\d|[a-f])/i
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:342:1:439:2) webByteUtils {
+  toLocalBufferType: [Function: toLocalBufferType],
+  allocate: [Function: allocate],
+  allocateUnsafe: [Function: allocateUnsafe],
+  equals: [Function: equals],
+  fromNumberArray: [Function: fromNumberArray],
+  fromBase64: [Function: fromBase64],
+  toBase64: [Function: toBase64],
+  fromISO88591: [Function: fromISO88591],
+  toISO88591: [Function: toISO88591],
+  fromHex: [Function: fromHex],
+  toHex: [Function: toHex],
+  toUTF8: [Function: toUTF8],
+  utf8ByteLength: [Function: utf8ByteLength],
+  encodeUTF8Into: [Function: encodeUTF8Into],
+  randomBytes: [Function: webMathRandomBytes]
+}
+binary function === function = true
+binary undefined === true = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:441:25:441:93) true
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:441:1:441:93) hasGlobalBuffer true
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:442:19:442:34) true
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:442:1:442:67) ByteUtils {
+  toLocalBufferType: [Function: toLocalBufferType],
+  allocate: [Function: allocate],
+  allocateUnsafe: [Function: allocateUnsafe],
+  equals: [Function: equals],
+  fromNumberArray: [Function: fromNumberArray],
+  fromBase64: [Function: fromBase64],
+  toBase64: [Function: toBase64],
+  fromISO88591: [Function: fromISO88591],
+  toISO88591: [Function: toISO88591],
+  fromHex: [Function: fromHex],
+  toHex: [Function: toHex],
+  toUTF8: [Function: toUTF8],
+  utf8ByteLength: [Function: utf8ByteLength],
+  encodeUTF8Into: [Function: encodeUTF8Into],
+  randomBytes: [Function: randomBytes]
+}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:621:1:621:28) UUID_BYTE_LENGTH 16
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:622:1:622:46) UUID_WITHOUT_DASHES /^[0-9A-F]{32}$/i
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:623:1:623:91) UUID_WITH_DASHES /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:841:1:841:21) wasm undefined
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:847:1:847:31) TWO_PWR_16_DBL 65536
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:848:1:848:31) TWO_PWR_24_DBL 16777216
+binary 65536 * 65536 = 4294967296
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:849:1:849:55) TWO_PWR_32_DBL 4294967296
+binary 4294967296 * 4294967296 = 18446744073709552000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:850:1:850:55) TWO_PWR_64_DBL 18446744073709552000
+binary 18446744073709552000 / 2 = 9223372036854776000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:851:1:851:42) TWO_PWR_63_DBL 9223372036854776000
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:852:1:852:21) INT_CACHE {}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:853:1:853:22) UINT_CACHE {}
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:854:1:854:35) MAX_INT64_STRING_LENGTH 20
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:855:1:855:53) DECIMAL_REG_EX /^(\+?0|(\+|-)?[1-9][0-9]*)$/
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:880:12:906:6)
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:882:13:882:21) undefined
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:895:13:895:23) value 16777216
+binary -128 <= 16777216 = true
+binary 16777216 < 128 = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:896:26:896:54) false
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:896:17:896:55) cache false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:896:17:896:55) false
+binary 16777216 < 0 = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:901:40:901:49) false
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:877:12:879:6)
+binary 16777216 === undefined = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:863:17:863:24) false
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:863:17:863:24) low 16777216
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:863:26:863:30) high 0
+write (node_modules/mongoose/node_modules/bson/lib/bson.cjs:863:32:863:40) unsigned false
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:856:1:1470:2)
+functionEnter@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:444:1:451:2)
+functionExit@ (node_modules/mongoose/node_modules/bson/lib/bson.cjs:444:1:451:2) undefined {}
+binary number === bigint = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:865:13:865:36) false
+binary number === string = false
+conditional (node_modules/mongoose/node_modules/bson/lib/bson.cjs:868:18:868:41) false

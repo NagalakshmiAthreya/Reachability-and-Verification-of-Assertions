@@ -1,0 +1,1322 @@
+
+> analysis_code@1.0.0 jalangi
+> mx jalangi --analysis ../src/ch.usi.inf.nodeprof/js/analysis/asyncawait/analysis.js "./client.js"
+
+functionEnter@ (client.js:1:1:9:45)
+functionExit@ (client.js:1:1:9:45) [Function (anonymous)] {}
+functionEnter@ (client.js:1:1:9:45)
+functionEnter@ (lambda2.js:1:1:17:3)
+functionExit@ (lambda2.js:1:1:17:3) [Function (anonymous)] {}
+functionEnter@ (lambda2.js:1:1:17:3)
+write (lambda2.js:1:1:11:2) processTemperatureData [AsyncFunction: processTemperatureData]
+functionExit@ (lambda2.js:1:1:17:3) undefined {}
+write (client.js:1:1:1:44) lambdaFunction { handler: [AsyncFunction (anonymous)] }
+functionEnter@ (sensorDataGenerator.js:1:1:10:37)
+functionExit@ (sensorDataGenerator.js:1:1:10:37) [Function (anonymous)] {}
+functionEnter@ (sensorDataGenerator.js:1:1:10:37)
+write (sensorDataGenerator.js:1:1:8:2) generateSensorData [Function: generateSensorData]
+functionExit@ (sensorDataGenerator.js:1:1:10:37) undefined {}
+write (client.js:2:1:2:60) generateSensorData [Function: generateSensorData]
+functionExit@ (client.js:1:1:9:45) undefined {}
+***********************************
+
+functionEnter@ (client.js:4:13:9:2)
+
+	functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+		binary 0.15238577939364972 * 100 = 15.238577939364973
+		return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 15 } }
+	functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 15 } } {}
+
+	write (client.js:5:5:5:50) event { temperature: 15 }
+
+	asyncEnter (lambda2.js:13:19:17:2)
+		functionEnter@ (lambda2.js:13:19:17:2)
+			write (lambda2.js:14:5:14:52) sensorData { temperature: 15 }
+			asyncEnter (lambda2.js:1:1:11:2)
+				functionEnter@ (lambda2.js:1:1:11:2)
+					write (lambda2.js:3:5:3:47) temperature 15
+					binary 15 > 30 = false
+					conditional (lambda2.js:5:9:5:25) false
+					Storing data: { temperature: 15 }
+				functionExit@ (lambda2.js:1:1:11:2) undefined {}
+			asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+			awaitPre (lambda2.js:15:5:15:45) <p0>
+		functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+	asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+
+functionEnter@ (lambda2.js:13:19:17:2)
+	awaitPost (lambda2.js:15:5:15:45) <p0> undefined resolved
+	return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+
+functionEnter@ (client.js:7:15:7:48)
+	{ statusCode: 200, body: 'Temperature processed successfully' }
+	return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+
+**************************************************************
+functionEnter@ (client.js:4:13:9:2)
+	functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+		binary 0.581914320985303 * 100 = 58.191432098530306
+		return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 58 } }
+	functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 58 } } {}
+	
+	write (client.js:5:5:5:50) event { temperature: 58 }
+	
+	asyncEnter (lambda2.js:13:19:17:2)
+		functionEnter@ (lambda2.js:13:19:17:2)
+			write (lambda2.js:14:5:14:52) sensorData { temperature: 58 }
+			asyncEnter (lambda2.js:1:1:11:2)
+				functionEnter@ (lambda2.js:1:1:11:2)
+					write (lambda2.js:3:5:3:47) temperature 58
+					binary 58 > 30 = true
+					conditional (lambda2.js:5:9:5:25) true
+					binary ALERT: Temperature is too high:  + 58 = ALERT: Temperature is too high: 58
+					ALERT: Temperature is too high: 58
+					Storing data: { temperature: 58 }
+				functionExit@ (lambda2.js:1:1:11:2) undefined {}
+			asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+			awaitPre (lambda2.js:15:5:15:45) <p1>
+		functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+	asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+
+functionExit@ (client.js:4:13:9:2) undefined {}
+
+functionEnter@ (lambda2.js:13:19:17:2)
+	awaitPost (lambda2.js:15:5:15:45) <p1> undefined resolved
+	return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+
+functionEnter@ (client.js:7:15:7:48)
+	{ statusCode: 200, body: 'Temperature processed successfully' }
+	return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+**************************************************************
+
+functionEnter@ (client.js:4:13:9:2)
+	functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5548824529218018 * 100 = 55.48824529218018
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 55 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 55 } } {}
+write (client.js:5:5:5:50) event { temperature: 55 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 55 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 55
+
+binary 55 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 55 = ALERT: Temperature is too high: 55
+ALERT: Temperature is too high: 55
+Storing data: { temperature: 55 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p2>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p2> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.7819243800195328 * 100 = 78.19243800195328
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 78 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 78 } } {}
+write (client.js:5:5:5:50) event { temperature: 78 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 78 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 78
+
+binary 78 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 78 = ALERT: Temperature is too high: 78
+ALERT: Temperature is too high: 78
+Storing data: { temperature: 78 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p3>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p3> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.05680232382093875 * 100 = 5.680232382093875
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 5 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 5 } } {}
+write (client.js:5:5:5:50) event { temperature: 5 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 5 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 5
+
+binary 5 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 5 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p4>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p4> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.9115866476163897 * 100 = 91.15866476163897
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 91 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 91 } } {}
+write (client.js:5:5:5:50) event { temperature: 91 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 91 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 91
+
+binary 91 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 91 = ALERT: Temperature is too high: 91
+ALERT: Temperature is too high: 91
+Storing data: { temperature: 91 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p5>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p5> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5301608236879585 * 100 = 53.01608236879585
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 53 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 53 } } {}
+write (client.js:5:5:5:50) event { temperature: 53 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 53 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 53
+
+binary 53 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 53 = ALERT: Temperature is too high: 53
+ALERT: Temperature is too high: 53
+Storing data: { temperature: 53 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p6>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p6> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.4216370958378691 * 100 = 42.16370958378691
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 42 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 42 } } {}
+write (client.js:5:5:5:50) event { temperature: 42 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 42 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 42
+
+binary 42 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 42 = ALERT: Temperature is too high: 42
+ALERT: Temperature is too high: 42
+Storing data: { temperature: 42 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p7>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p7> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.4684939554956187 * 100 = 46.84939554956187
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 46 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 46 } } {}
+write (client.js:5:5:5:50) event { temperature: 46 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 46 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 46
+
+binary 46 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 46 = ALERT: Temperature is too high: 46
+ALERT: Temperature is too high: 46
+Storing data: { temperature: 46 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p8>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p8> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.18098147723572522 * 100 = 18.098147723572524
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 18 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 18 } } {}
+write (client.js:5:5:5:50) event { temperature: 18 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 18 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 18
+
+binary 18 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 18 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p9>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p9> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.8630856754326426 * 100 = 86.30856754326426
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 86 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 86 } } {}
+write (client.js:5:5:5:50) event { temperature: 86 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 86 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 86
+
+binary 86 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 86 = ALERT: Temperature is too high: 86
+ALERT: Temperature is too high: 86
+Storing data: { temperature: 86 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p10>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p10> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5226797512443607 * 100 = 52.26797512443607
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 52 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 52 } } {}
+write (client.js:5:5:5:50) event { temperature: 52 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 52 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 52
+
+binary 52 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 52 = ALERT: Temperature is too high: 52
+ALERT: Temperature is too high: 52
+Storing data: { temperature: 52 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p11>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p11> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.9541970919812508 * 100 = 95.41970919812508
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 95 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 95 } } {}
+write (client.js:5:5:5:50) event { temperature: 95 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 95 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 95
+
+binary 95 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 95 = ALERT: Temperature is too high: 95
+ALERT: Temperature is too high: 95
+Storing data: { temperature: 95 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p12>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p12> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5345702067218183 * 100 = 53.457020672181834
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 53 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 53 } } {}
+write (client.js:5:5:5:50) event { temperature: 53 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 53 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 53
+
+binary 53 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 53 = ALERT: Temperature is too high: 53
+ALERT: Temperature is too high: 53
+Storing data: { temperature: 53 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p13>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p13> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.671252872915026 * 100 = 67.1252872915026
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 67 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 67 } } {}
+write (client.js:5:5:5:50) event { temperature: 67 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 67 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 67
+
+binary 67 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 67 = ALERT: Temperature is too high: 67
+ALERT: Temperature is too high: 67
+Storing data: { temperature: 67 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p14>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p14> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.05633190389859222 * 100 = 5.633190389859221
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 5 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 5 } } {}
+write (client.js:5:5:5:50) event { temperature: 5 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 5 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 5
+
+binary 5 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 5 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p15>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p15> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.13536904726899823 * 100 = 13.536904726899824
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 13 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 13 } } {}
+write (client.js:5:5:5:50) event { temperature: 13 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 13 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 13
+
+binary 13 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 13 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p16>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p16> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.06486708731929436 * 100 = 6.486708731929436
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 6 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 6 } } {}
+write (client.js:5:5:5:50) event { temperature: 6 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 6 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 6
+
+binary 6 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 6 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p17>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p17> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5777684739532997 * 100 = 57.776847395329966
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 57 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 57 } } {}
+write (client.js:5:5:5:50) event { temperature: 57 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 57 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 57
+
+binary 57 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 57 = ALERT: Temperature is too high: 57
+ALERT: Temperature is too high: 57
+Storing data: { temperature: 57 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p18>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p18> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.9127440606595162 * 100 = 91.27440606595162
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 91 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 91 } } {}
+write (client.js:5:5:5:50) event { temperature: 91 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 91 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 91
+
+binary 91 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 91 = ALERT: Temperature is too high: 91
+ALERT: Temperature is too high: 91
+Storing data: { temperature: 91 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p19>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p19> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.18681958447759917 * 100 = 18.681958447759918
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 18 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 18 } } {}
+write (client.js:5:5:5:50) event { temperature: 18 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 18 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 18
+
+binary 18 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 18 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p20>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p20> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.3435696565251313 * 100 = 34.356965652513125
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 34 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 34 } } {}
+write (client.js:5:5:5:50) event { temperature: 34 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 34 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 34
+
+binary 34 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 34 = ALERT: Temperature is too high: 34
+ALERT: Temperature is too high: 34
+Storing data: { temperature: 34 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p21>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p21> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5497816967541441 * 100 = 54.978169675414414
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 54 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 54 } } {}
+write (client.js:5:5:5:50) event { temperature: 54 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 54 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 54
+
+binary 54 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 54 = ALERT: Temperature is too high: 54
+ALERT: Temperature is too high: 54
+Storing data: { temperature: 54 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p22>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p22> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5885781364269638 * 100 = 58.85781364269638
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 58 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 58 } } {}
+write (client.js:5:5:5:50) event { temperature: 58 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 58 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 58
+
+binary 58 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 58 = ALERT: Temperature is too high: 58
+ALERT: Temperature is too high: 58
+Storing data: { temperature: 58 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p23>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p23> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.7693341679936039 * 100 = 76.93341679936039
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 76 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 76 } } {}
+write (client.js:5:5:5:50) event { temperature: 76 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 76 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 76
+
+binary 76 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 76 = ALERT: Temperature is too high: 76
+ALERT: Temperature is too high: 76
+Storing data: { temperature: 76 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p24>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p24> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.5199300683126065 * 100 = 51.993006831260644
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 51 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 51 } } {}
+write (client.js:5:5:5:50) event { temperature: 51 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 51 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 51
+
+binary 51 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 51 = ALERT: Temperature is too high: 51
+ALERT: Temperature is too high: 51
+Storing data: { temperature: 51 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p25>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p25> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.7319564603590872 * 100 = 73.19564603590872
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 73 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 73 } } {}
+write (client.js:5:5:5:50) event { temperature: 73 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 73 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 73
+
+binary 73 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 73 = ALERT: Temperature is too high: 73
+ALERT: Temperature is too high: 73
+Storing data: { temperature: 73 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p26>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p26> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.735656121742525 * 100 = 73.56561217425251
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 73 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 73 } } {}
+write (client.js:5:5:5:50) event { temperature: 73 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 73 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 73
+
+binary 73 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 73 = ALERT: Temperature is too high: 73
+ALERT: Temperature is too high: 73
+Storing data: { temperature: 73 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p27>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p27> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.26184232881525804 * 100 = 26.184232881525805
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 26 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 26 } } {}
+write (client.js:5:5:5:50) event { temperature: 26 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 26 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 26
+
+binary 26 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 26 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p28>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p28> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.4169886257970463 * 100 = 41.69886257970463
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 41 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 41 } } {}
+write (client.js:5:5:5:50) event { temperature: 41 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 41 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 41
+
+binary 41 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 41 = ALERT: Temperature is too high: 41
+ALERT: Temperature is too high: 41
+Storing data: { temperature: 41 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p29>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p29> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.05780161999064315 * 100 = 5.780161999064315
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 5 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 5 } } {}
+write (client.js:5:5:5:50) event { temperature: 5 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 5 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 5
+
+binary 5 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 5 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p30>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p30> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.7743617615498957 * 100 = 77.43617615498957
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 77 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 77 } } {}
+write (client.js:5:5:5:50) event { temperature: 77 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 77 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 77
+
+binary 77 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 77 = ALERT: Temperature is too high: 77
+ALERT: Temperature is too high: 77
+Storing data: { temperature: 77 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p31>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p31> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.1726579407872555 * 100 = 17.26579407872555
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 17 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 17 } } {}
+write (client.js:5:5:5:50) event { temperature: 17 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 17 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 17
+
+binary 17 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 17 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p32>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p32> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.22095062693716971 * 100 = 22.095062693716972
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 22 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 22 } } {}
+write (client.js:5:5:5:50) event { temperature: 22 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 22 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 22
+
+binary 22 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 22 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p33>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p33> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.9588188907358755 * 100 = 95.88188907358754
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 95 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 95 } } {}
+write (client.js:5:5:5:50) event { temperature: 95 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 95 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 95
+
+binary 95 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 95 = ALERT: Temperature is too high: 95
+ALERT: Temperature is too high: 95
+Storing data: { temperature: 95 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p34>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p34> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.664368159236558 * 100 = 66.4368159236558
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 66 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 66 } } {}
+write (client.js:5:5:5:50) event { temperature: 66 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 66 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 66
+
+binary 66 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 66 = ALERT: Temperature is too high: 66
+ALERT: Temperature is too high: 66
+Storing data: { temperature: 66 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p35>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p35> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.6013461889860015 * 100 = 60.134618898600145
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 60 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 60 } } {}
+write (client.js:5:5:5:50) event { temperature: 60 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 60 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 60
+
+binary 60 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 60 = ALERT: Temperature is too high: 60
+ALERT: Temperature is too high: 60
+Storing data: { temperature: 60 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p36>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p36> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.047898690242687225 * 100 = 4.7898690242687225
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 4 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 4 } } {}
+write (client.js:5:5:5:50) event { temperature: 4 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 4 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 4
+
+binary 4 > 30 = false
+conditional (lambda2.js:5:9:5:25) false
+Storing data: { temperature: 4 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p37>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p37> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.47441608476607244 * 100 = 47.44160847660724
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 47 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 47 } } {}
+write (client.js:5:5:5:50) event { temperature: 47 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 47 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 47
+
+binary 47 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 47 = ALERT: Temperature is too high: 47
+ALERT: Temperature is too high: 47
+Storing data: { temperature: 47 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p38>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p38> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.9795202426083808 * 100 = 97.95202426083807
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 97 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 97 } } {}
+write (client.js:5:5:5:50) event { temperature: 97 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 97 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 97
+
+binary 97 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 97 = ALERT: Temperature is too high: 97
+ALERT: Temperature is too high: 97
+Storing data: { temperature: 97 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p39>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p39> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}
+functionEnter@ (client.js:4:13:9:2)
+functionEnter@ (sensorDataGenerator.js:1:1:8:2)
+binary 0.32298173558871535 * 100 = 32.29817355887153
+return (sensorDataGenerator.js:3:5:7:7) { sensorData: { temperature: 32 } }
+functionExit@ (sensorDataGenerator.js:1:1:8:2) { sensorData: { temperature: 32 } } {}
+write (client.js:5:5:5:50) event { temperature: 32 }
+asyncEnter (lambda2.js:13:19:17:2)
+functionEnter@ (lambda2.js:13:19:17:2)
+write (lambda2.js:14:5:14:52) sensorData { temperature: 32 }
+asyncEnter (lambda2.js:1:1:11:2)
+functionEnter@ (lambda2.js:1:1:11:2)
+write (lambda2.js:3:5:3:47) temperature 32
+
+binary 32 > 30 = true
+conditional (lambda2.js:5:9:5:25) true
+binary ALERT: Temperature is too high:  + 32 = ALERT: Temperature is too high: 32
+ALERT: Temperature is too high: 32
+Storing data: { temperature: 32 }
+functionExit@ (lambda2.js:1:1:11:2) undefined {}
+asyncExit (lambda2.js:1:1:11:2) Promise { undefined } {}
+awaitPre (lambda2.js:15:5:15:45) <p40>
+functionExit@ (lambda2.js:13:19:17:2) undefined { yield: true }
+asyncExit (lambda2.js:13:19:17:2) Promise { <pending> } {}
+functionExit@ (client.js:4:13:9:2) undefined {}
+functionEnter@ (lambda2.js:13:19:17:2)
+awaitPost (lambda2.js:15:5:15:45) <p40> undefined resolved
+return (lambda2.js:16:5:16:76) { statusCode: 200, body: 'Temperature processed successfully' }
+functionExit@ (lambda2.js:13:19:17:2) { statusCode: 200, body: 'Temperature processed successfully' } {}
+functionEnter@ (client.js:7:15:7:48)
+{ statusCode: 200, body: 'Temperature processed successfully' }
+return (client.js:7:27:7:48) undefined
+functionExit@ (client.js:7:15:7:48) undefined {}

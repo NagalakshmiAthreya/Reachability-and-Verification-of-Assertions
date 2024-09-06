@@ -1,0 +1,16 @@
+
+  Fire Detection Order Preservation
+    1) should preserve the order of operations during fire detection
+
+
+  0 passing (5s)
+  1 failing
+
+  1) Fire Detection Order Preservation
+       should preserve the order of operations during fire detection:
+
+      AssertionError [ERR_ASSERTION]: MQTT broker connection is not in the correct order
+      + expected - actual
+
+      -false
+      +true

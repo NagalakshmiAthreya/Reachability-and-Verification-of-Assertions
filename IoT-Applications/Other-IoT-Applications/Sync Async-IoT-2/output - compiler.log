@@ -1,0 +1,10 @@
+Sensor data written to file
+Starting asyncFunction for client 1
+Threshold not exceeded for client 1
+Async function completed for client 1
+Starting asyncFunction for client 2
+Threshold not exceeded for client 2
+Async function completed for client 2
+Starting asyncFunction for client 3
+Threshold not exceeded for client 3
+Async function completed for client 3
